@@ -1,0 +1,90 @@
+''' --------------- this if I could actually use the twt api if i get the academic license
+import configparser
+import tweepy
+
+def twitter_connection():
+    config = configparser.ConfigParser()
+    config.read('D:\ML-NLP-Project\config.ini')
+
+    api_key = config['twitter']['api_key']
+    api_key_secret = config['twitter']['api_key_secret']
+    access_token =  config['twitter']['access_token']
+    access_token_secret =  config['twitter']['access_token_secret']
+
+    auth = tweepy.OAuthHandler(api_key, api_key_secret)
+    auth.set_access_token(access_token, access_token_secret)
+
+    api = tweepy.API(auth)
+    return api
+
+
+api = twitter_connection()
+
+def extract_tweets(api, tag, num_tweets):
+    tweets = []
+    for tweet in api.search_recent_tweets(query=tag, lang="en").items(num_tweets):                
+        tweets.append({
+            'username': tweet.author.username,
+            'created_at': tweet.created_at,
+            'likes': tweet.public_metrics.like_count,
+            'full_text': tweet.text
+        })
+        
+    data = pd.DataFrame({
+        'Tweets': [tweet['full_text'] for tweet in tweets],
+        'Date': [tweet['created_at'] for tweet in tweets],
+        'Hearts': [tweet['likes'] for tweet in tweets],
+        'User': [tweet['username'] for tweet in tweets]
+    })
+    
+    return data
+
+
+--------------same stuff but with snscrape since its also closed +++ read that reddit did the same shit as twitter so tumblr it is
+
+import snscrape.modules.twitter as sntwitter
+
+    
+    def extract_tweets(tag, num_tweets):
+    scraper = sntwitter.TwitterSearchScraper(f'#{tag} lang:en')
+    tweets = []
+    
+    for i,tweet in enumerate(scraper.get_items()):
+       data = [
+            tweet.id,
+            tweet.user.username,
+            tweet.content,
+            tweet.likeCount,
+        ]
+       tweets.append(data)
+       if i >= num_tweets:
+            break
+
+    pd.DataFrame(tweets, columns = ['id', 'username', 'content', 'likes'])
+    
+    return data
+'''
+
+---------------sentiment classification if i used the lstm model for the app
+'''
+def classify_sentiments(data):
+    # Load the saved export model
+    export_model = tf.keras.models.load_model("D:\ML-NLP-Project\lstm_model.h5")
+    vectorize_layer = export_model.layers[0]  # Update the index to match the input layer
+
+    # Perform sentiment classification for each tweet
+    sentiment_results = []
+    for tweet in data['full_text']:
+        tweet_str = ' '.join(str(token) for token in tweet)  # Convert list of integers to string
+        
+        # Vectorize the input text
+        vectorized_input = vectorize_layer(tf.constant([tweet_str]), training=False)  # Pass the tweet as a constant tensor
+        
+        prediction = export_model.predict(vectorized_input)
+        sentiment = "Positive" if prediction[0][0] >= 0.5 else "Negative"
+        sentiment_results.append(sentiment)
+    
+    # Add the sentiment results as a new column in the DataFrame
+    data['Sentiment'] = sentiment_results
+    return data
+'''
