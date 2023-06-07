@@ -8,7 +8,7 @@ This project incorporates various machine learning algorithms for natural langua
 This project focuses on applying machine learning algorithms to NLP tasks and developing a sentiment analysis application using the Tumblr API. The application, built with Streamlit, utilizes essential libraries such as scikit-learn, TensorFlow, and Keras for model training and deployment.
 
 ## Data and Embeddings
-The project utilizes the Sentiment140 dataset sourced from Kaggle, which consists of 1.6 million tweets. This dataset serves as the foundation for training and evaluating the sentiment analysis models. Additionally, the project utilizes Stanford's GloVe 100-dimensional word embeddings file, glove.6B.100d.txt, obtained from Kaggle. These pre-trained word embeddings enhance the models' understanding of semantic relationships between words.
+The project utilizes the Sentiment140 dataset sourced from Kaggle ( https://www.kaggle.com/datasets/kazanova/sentiment140 ), which consists of 1.6 million tweets. This dataset serves as the foundation for training and evaluating the sentiment analysis models. Additionally, the project utilizes Stanford's GloVe 100-dimensional word embeddings file, glove.6B.100d.txt, obtained from Kaggle ( https://www.kaggle.com/datasets/danielwillgeorge/glove6b100dtxt ). These pre-trained word embeddings enhance the models' understanding of semantic relationships between words.
 
 ## Algorithms Used 🎯
 
