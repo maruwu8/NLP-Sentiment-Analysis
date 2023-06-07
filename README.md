@@ -1,6 +1,9 @@
 # NLP-Sentiment-Analysis
 This project features various machine learning NLP algorithms (LSTM, SVMs, Naive Bayes) and a mini app that extracts and performs sentiment analysis on blog posts using the Tumblr API.
 
+![Tumblr Sentiment Analysis App Preview](app/NLP-APP-Preview.png)
+
+
 This project involves the utilization of various machine learning algorithms for natural language processing (NLP) tasks, including LSTM, SVMs, and a baseline Naive Bayes classifier. The primary objective is to develop a sentiment analysis application that leverages the Tumblr API. The application, created using Streamlit, incorporates essential libraries such as scikit-learn, TensorFlow, and Keras for model training and deployment.
 
 For data analysis, the project employs the Sentiment140 dataset sourced from Kaggle, which consists of 1.6 million tweets. This dataset serves as the foundation for training and evaluating the sentiment analysis models. Additionally, the project utilizes Stanford's GloVe 100-dimensional word embeddings file, glove.6B.100d.txt, which is obtained from Kaggle. These pre-trained word embeddings enhance the models' understanding of semantic relationships between words.
