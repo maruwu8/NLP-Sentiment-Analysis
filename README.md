@@ -27,3 +27,9 @@ ROC-AUC Curve: The ROC-AUC curve is a graphical representation of the model's ab
 Confusion Matrix with Plot: The confusion matrix is a square matrix of size N x N, where N represents the number of target classes. It allows us to evaluate the performance of the classification models by comparing the actual target values with the predicted values. Additionally, a visual plot of the confusion matrix provides a clearer understanding of the model's performance.
 
 By analyzing these evaluation measures, we can assess the effectiveness of the models in accurately classifying the sentiment of the extracted Tumblr blog posts.
+
+Initially, I intended to perform a sentiment analysis on tweets by utilizing the Twitter API. However, due to changes in the Twitter API's access and the unavailability of free essential versions, I had to explore alternative options. Unfortunately, other tools like snscrape that could scrape tweets were also no longer accessible.
+
+As a result, I shifted my focus to Tumblr as a data source, despite it not being the most optimal platform for Natural Language Processing (NLP) tasks. The reason behind this choice is that Tumblr primarily revolves around multimedia content such as images and videos, with text playing a less significant role in the platform's blogging format.
+
+By leveraging the Tumblr API, I was able to extract blog posts that contain text and proceed with sentiment analysis. Although the availability of textual data might be limited compared to a text-centric platform like Twitter, I aimed to explore the possibilities and limitations of applying NLP techniques to Tumblr data.
