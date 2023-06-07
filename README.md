@@ -1,35 +1,38 @@
-# NLP-Sentiment-Analysis
-This project features various machine learning NLP algorithms (LSTM, SVMs, Naive Bayes) and a mini app that extracts and performs sentiment analysis on blog posts using the Tumblr API.
+# NLP Sentiment Analysis 📚
 
-![Tumblr Sentiment Analysis App Preview](app/NLP-APP-Preview.png)
+This project incorporates various machine learning algorithms for natural language processing (NLP) tasks, including LSTM, SVMs, and Naive Bayes, along with a mini app that performs sentiment analysis on blog posts using the Tumblr API. 
 
+📷 ![Tumblr Sentiment Analysis App Preview](app/NLP-APP-Preview.png)
 
-This project involves the utilization of various machine learning algorithms for natural language processing (NLP) tasks, including LSTM, SVMs, and a baseline Naive Bayes classifier. The primary objective is to develop a sentiment analysis application that leverages the Tumblr API. The application, created using Streamlit, incorporates essential libraries such as scikit-learn, TensorFlow, and Keras for model training and deployment.
+## Project Overview
+This project focuses on applying machine learning algorithms to NLP tasks and developing a sentiment analysis application using the Tumblr API. The application, built with Streamlit, utilizes essential libraries such as scikit-learn, TensorFlow, and Keras for model training and deployment.
 
-For data analysis, the project employs the Sentiment140 dataset sourced from Kaggle, which consists of 1.6 million tweets. This dataset serves as the foundation for training and evaluating the sentiment analysis models. Additionally, the project utilizes Stanford's GloVe 100-dimensional word embeddings file, glove.6B.100d.txt, which is obtained from Kaggle. These pre-trained word embeddings enhance the models' understanding of semantic relationships between words.
+## Data and Embeddings
+The project utilizes the Sentiment140 dataset sourced from Kaggle, which consists of 1.6 million tweets. This dataset serves as the foundation for training and evaluating the sentiment analysis models. Additionally, the project utilizes Stanford's GloVe 100-dimensional word embeddings file, glove.6B.100d.txt, obtained from Kaggle. These pre-trained word embeddings enhance the models' understanding of semantic relationships between words.
 
-By combining these machine learning algorithms, libraries, and datasets, the sentiment analysis application extracts Tumblr blog posts, performs sentiment analysis, and categorizes them as either positive or negative based on the trained models.
+## Algorithms Used
 
-Naive Bayes Classifier (NLP): In natural language processing (NLP), the Naive Bayes classifier is a probabilistic algorithm used for text classification tasks. It assumes that the presence or absence of each word in a document is independent of other words, given the class label. Naive Bayes classifiers are commonly used in NLP for tasks like sentiment analysis, spam detection, and document categorization.
+### Naive Bayes Classifier (NLP)
+The Naive Bayes classifier is a probabilistic algorithm widely used in NLP for text classification tasks. It assumes that the presence or absence of each word in a document is independent of other words, given the class label. Naive Bayes classifiers are commonly used in sentiment analysis, spam detection, and document categorization.
 
-LSTM (Long Short-Term Memory) (NLP): LSTM is a type of recurrent neural network (RNN) architecture that is widely used in NLP tasks. It is designed to handle sequential data and has the ability to capture long-term dependencies in text. LSTMs are effective in tasks like language modeling, machine translation, sentiment analysis, and named entity recognition. They can process input text sequentially, retaining information from previous words to understand the context and make predictions.
+### LSTM (Long Short-Term Memory) (NLP)
+LSTM is a type of recurrent neural network (RNN) architecture widely used in NLP tasks. It is designed to handle sequential data and can capture long-term dependencies in text. LSTMs are effective in language modeling, machine translation, sentiment analysis, and named entity recognition. They retain information from previous words to understand context and make predictions.
 
-SVM (Support Vector Machine) (NLP): SVM is a machine learning algorithm that can be used for text classification and sentiment analysis in NLP. It finds an optimal hyperplane to separate different classes of text data. SVMs in NLP are often used with features derived from text, such as bag-of-words or TF-IDF vectors. They can handle high-dimensional feature spaces and are effective in tasks like sentiment analysis, text categorization, and topic classification.
+### SVM (Support Vector Machine) (NLP)
+SVM is a machine learning algorithm used for text classification and sentiment analysis in NLP. It finds an optimal hyperplane to separate different classes of text data. SVMs are often used with features derived from text, such as bag-of-words or TF-IDF vectors. They can handle high-dimensional feature spaces and are effective in sentiment analysis, text categorization, and topic classification.
 
-In NLP, Naive Bayes classifiers are commonly used for their simplicity and speed, LSTM models are suitable for capturing sequential dependencies in text, and SVMs are versatile algorithms capable of handling high-dimensional text features for classification tasks.
+## Evaluation Measures
+After training the models, we evaluate their performance using the following measures:
 
-After training the models, we proceed to evaluate their performance using various evaluation measures. The following parameters are utilized to assess the models' performance:
-
-Accuracy Score: The accuracy score provides an indication of the overall correctness of the predictive models. A high accuracy score, typically above 90%, suggests that the models perform well in classifying the blog posts.
-
-ROC-AUC Curve: The ROC-AUC curve is a graphical representation of the model's ability to distinguish between the positive and negative classes. The Area Under the Curve (AUC) is calculated to summarize the ROC curve. A higher AUC value signifies a better performance in class separation.
-
-Confusion Matrix with Plot: The confusion matrix is a square matrix of size N x N, where N represents the number of target classes. It allows us to evaluate the performance of the classification models by comparing the actual target values with the predicted values. Additionally, a visual plot of the confusion matrix provides a clearer understanding of the model's performance.
+- Accuracy Score: Provides an indication of the overall correctness of the predictive models. Typically, an accuracy score above 90% is considered good.
+- ROC-AUC Curve: The Area Under the Curve (AUC) summarizes the model's ability to distinguish between positive and negative classes. A higher AUC indicates better performance in class separation.
+- Confusion Matrix with Plot: The confusion matrix compares the actual target values with the predicted values, providing insight into the classification model's performance. A visual plot enhances the understanding of the model's behavior.
 
 By analyzing these evaluation measures, we can assess the effectiveness of the models in accurately classifying the sentiment of the extracted Tumblr blog posts.
 
-Initially, I intended to perform a sentiment analysis on tweets by utilizing the Twitter API. However, due to changes in the Twitter API's access and the unavailability of free essential versions, I had to explore alternative options. Unfortunately, other tools like snscrape that could scrape tweets were also no longer accessible.
+## Project Background
+Initially, the goal was to perform sentiment analysis on tweets using the Twitter API. However, due to changes in the Twitter API's access and the unavailability of free essential versions, alternative options were explored. Unfortunately, other tools like snscrape, which could scrape tweets, were also inaccessible.
 
-As a result, I shifted my focus to Tumblr as a data source, despite it not being the most optimal platform for Natural Language Processing (NLP) tasks. The reason behind this choice is that Tumblr primarily revolves around multimedia content such as images and videos, with text playing a less significant role in the platform's blogging format.
+As a result, the focus shifted to using the Tumblr API as a data source, although Tumblr is not an ideal platform for NLP tasks due to its emphasis on multimedia content rather than text. Nevertheless, by leveraging the Tumblr API, it was possible to extract blog posts that contain text and perform sentiment analysis. While the availability of textual data might be limited compared to text-centric platforms like
 
-By leveraging the Tumblr API, I was able to extract blog posts that contain text and proceed with sentiment analysis. Although the availability of textual data might be limited compared to a text-centric platform like Twitter, I aimed to explore the possibilities and limitations of applying NLP techniques to Tumblr data.
+ Twitter, the project aimed to explore the possibilities and limitations of applying NLP techniques to Tumblr data.
