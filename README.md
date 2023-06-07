@@ -1,16 +1,16 @@
 # NLP Sentiment Analysis 📚
 
-This project incorporates various machine learning algorithms for natural language processing (NLP) tasks, including LSTM, SVMs, and Naive Bayes, along with a mini app that performs sentiment analysis on blog posts using the Tumblr API. 
+This project incorporates various machine learning algorithms for natural language processing (NLP) tasks, including LSTM, SVMs, and Naive Bayes, along with a mini app that performs sentiment analysis on blog posts using the Tumblr API. 📷
 
-📷 ![Tumblr Sentiment Analysis App Preview](app/NLP-APP-Preview.png)
+ ![Tumblr Sentiment Analysis App Preview](app/NLP-APP-Preview.png)
 
-## Project Overview
+## Project Overview 🔰
 This project focuses on applying machine learning algorithms to NLP tasks and developing a sentiment analysis application using the Tumblr API. The application, built with Streamlit, utilizes essential libraries such as scikit-learn, TensorFlow, and Keras for model training and deployment.
 
 ## Data and Embeddings
 The project utilizes the Sentiment140 dataset sourced from Kaggle, which consists of 1.6 million tweets. This dataset serves as the foundation for training and evaluating the sentiment analysis models. Additionally, the project utilizes Stanford's GloVe 100-dimensional word embeddings file, glove.6B.100d.txt, obtained from Kaggle. These pre-trained word embeddings enhance the models' understanding of semantic relationships between words.
 
-## Algorithms Used
+## Algorithms Used 🎯
 
 ### Naive Bayes Classifier (NLP)
 The Naive Bayes classifier is a probabilistic algorithm widely used in NLP for text classification tasks. It assumes that the presence or absence of each word in a document is independent of other words, given the class label. Naive Bayes classifiers are commonly used in sentiment analysis, spam detection, and document categorization.
@@ -33,6 +33,4 @@ By analyzing these evaluation measures, we can assess the effectiveness of the m
 ## Project Background
 Initially, the goal was to perform sentiment analysis on tweets using the Twitter API. However, due to changes in the Twitter API's access and the unavailability of free essential versions, alternative options were explored. Unfortunately, other tools like snscrape, which could scrape tweets, were also inaccessible.
 
-As a result, the focus shifted to using the Tumblr API as a data source, although Tumblr is not an ideal platform for NLP tasks due to its emphasis on multimedia content rather than text. Nevertheless, by leveraging the Tumblr API, it was possible to extract blog posts that contain text and perform sentiment analysis. While the availability of textual data might be limited compared to text-centric platforms like
-
- Twitter, the project aimed to explore the possibilities and limitations of applying NLP techniques to Tumblr data.
+As a result, the focus shifted to using the Tumblr API as a data source, although Tumblr is not an ideal platform for NLP tasks due to its emphasis on multimedia content rather than text. Nevertheless, by leveraging the Tumblr API, it was possible to extract blog posts that contain text and perform sentiment analysis. While the availability of textual data might be limited compared to text-centric platforms like Twitter, the project aimed to explore the possibilities and limitations of applying NLP techniques to Tumblr data.
